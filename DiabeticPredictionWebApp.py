@@ -10,7 +10,7 @@ import pickle
 import streamlit as st
 
 #loading the saved model
-loded_model = pickle.load(open("C:/Users/sahur/DiabeticPrediction/diabetic_trained_model.sav", 'rb'))
+loded_model = pickle.load(open("diabetic_trained_model.sav", 'rb'))
 
 #creating a funnction fro prediction
 def diabetic_prediction(input_data):
@@ -58,4 +58,5 @@ def main():
 if __name__ == '__main__':
     main()
     
+
     
