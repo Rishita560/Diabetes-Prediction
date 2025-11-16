@@ -10,7 +10,7 @@ import pickle
 import streamlit as st
 
 #loading the saved model
-loded_model = pickle.load(open("diabetic_trained_model.sav", 'rb'))
+loaded_model = pickle.load(open("diabetic_trained_model.sav", 'rb'))
 
 #creating a funnction fro prediction
 def diabetic_prediction(input_data):
@@ -22,7 +22,7 @@ def diabetic_prediction(input_data):
     input_data_reshaped = input_data_as_numpy_array.reshape(1, -1)
 
     # prediction (0/1)
-    prediction = loded_model.predict(input_data_reshaped)
+    prediction = loaded_model.predict(input_data_reshaped)
 
     #probability prediction (confidence)
     probability = loaded_model.predict_proba(input_data_reshaped)[0][1] #prob of diabetic class
@@ -103,3 +103,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
